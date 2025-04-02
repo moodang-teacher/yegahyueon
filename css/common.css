@@ -1,0 +1,61 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root {
+    font-size: 100%; /* 16px --> 1rem */
+    --main-color: #f84812;
+    --title-color: #333;
+    --text-color: #666;
+    --line-color: rgba(0, 0, 0, 0.3);
+    --bg-color: #e5e5e5;
+
+    --white10p: rgba(255, 255, 255, 0.1);
+    --white20p: rgba(255, 255, 255, 0.2);
+    --white30p: rgba(255, 255, 255, 0.3);
+    --white40p: rgba(255, 255, 255, 0.4);
+    --white50p: rgba(255, 255, 255, 0.5);
+    --white60p: rgba(255, 255, 255, 0.6);
+    --white70p: rgba(255, 255, 255, 0.7);
+    --white80p: rgba(255, 255, 255, 0.8);
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+a {
+    text-decoration: none; /* tdn */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+hr,
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    font: 1rem/1.5 'Roboto Condensed', Pretendard, sans-serif;
+    color: var(--text-color);
+    word-break: keep-all;
+    text-transform: capitalize;
+}
