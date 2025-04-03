@@ -29,7 +29,7 @@ main {
 section {
     position: relative;
     z-index: 5;
-    padding: 3vw;
+    padding: 5vw;
     background: #000;
 }
 
@@ -226,11 +226,171 @@ section {
     color: #fff;
 }
 
-.project-con-item:nth-child(1) {
-    border: 10px solid red;
+.project-content {
+    margin-top: 70px;
 }
-.project-con-item:nth-child(2) {
-    border: 10px solid blue;
+
+.webdesign .project-list {
+    counter-reset: webdesign-project;
+}
+
+.webdesign .project-list li {
+    width: 50%;
+    counter-increment: webdesign-project;
+    position: relative;
+}
+
+.webdesign .project-list li::before {
+    content: counter(webdesign-project);
+    font-family: Pretendard;
+    font-weight: 300;
+    font-size: 10vw;
+    color: #fff;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: -150px;
+}
+
+.webdesign .project-list li:hover::before {
+    color: var(--main-color);
+}
+
+.webdesign .project-list li:nth-child(even)::before {
+    right: auto;
+    left: -150px;
+}
+
+.webdesign .project-list li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -400px;
+    left: 100%;
+    width: 1px;
+    height: 400px;
+    background: var(--white40p);
+}
+
+.webdesign .project-list li:nth-child(even)::after {
+    left: auto;
+    right: 100%;
+}
+
+.webdesign .project-list li:not(:first-child) {
+    margin-top: 400px;
+}
+
+.webdesign .project-list li:nth-child(even) {
+    margin-left: auto;
+}
+
+.webdesign .project-list li figure {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.webdesign .project-list li figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.webdesign .project-list li dl {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* margin-top: 40px; */
+    padding: 40px 0;
+    font-family: Pretendard;
+    font-weight: 400;
+    color: #fff;
+}
+
+.webdesign .project-list li:hover dl {
+    color: var(--main-color);
+}
+
+.webdesign .project-list li dl dt {
+    font-size: 30px;
+}
+.webdesign .project-list li dl dd {
+    font-size: 20px;
+}
+
+.pswp {
+    backdrop-filter: blur(10px) !important;
+}
+
+.graphicdesign {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.graphicdesign .project-list {
+    width: 40%;
+    /* border: 1px solid #0f0; */
+}
+
+.graphicdesign .project-list li {
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.graphicdesign .project-list li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: 0.4s;
+}
+
+.graphicdesign .project-list li.active::after {
+    width: 100%;
+}
+
+.graphicdesign .project-list li:hover * {
+    color: var(--main-color);
+}
+
+.graphicdesign .project-list li.active * {
+    color: #fff;
+}
+
+.graphicdesign .project-list li dl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white30p);
+}
+
+.graphicdesign .project-list li dl dt {
+    font-size: 20px;
+}
+
+.graphicdesign .project-list li dl dd {
+    font-size: 16px;
+}
+
+.graphicdesign-content {
+    width: 30%;
+}
+
+.graphicdesign-content figure {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.graphicdesign-content figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* CONTACT */

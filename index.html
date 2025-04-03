@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/common.css" />
         <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css" />
+
+        <script src="./js/gallery.js" type="module"></script>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
@@ -17,8 +20,8 @@
     <body>
         <!-- GNB -->
         <div class="gnb">
-            <a href="" class="menu"><i class="hidden">menu</i></a>
-            <a href="" class="go-top"><i class="hidden">go top</i></a>
+            <a href="#" class="menu"><i class="hidden">menu</i></a>
+            <a href="#" class="go-top"><i class="hidden">go top</i></a>
         </div>
         <hr />
 
@@ -122,13 +125,13 @@
             <!-- ABOUT -->
             <section class="about">
                 <ul class="about-menu">
-                    <li><a href="">ABOUT ME</a></li>
-                    <li><a href="">PROJECT</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="#">ABOUT ME</a></li>
+                    <li><a href="#">PROJECT</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">CONTACT</a></li>
                 </ul>
                 <div class="about-title">
-                    <h2>Ye <span>Gahyueon</span></h2>
+                    <h2><span>Ye</span> <span>Gahyueon</span></h2>
                     <p>Designer</p>
                 </div>
             </section>
@@ -141,67 +144,145 @@
                     <li>GRAPHICDESIGN</li>
                 </ul>
                 <div class="project-content">
-                    <div class="project-con-item">
-                        <ol class="project-list webdesign">
+                    <div class="project-con-item webdesign">
+                        <ol class="project-list" id="webdesign">
                             <li>
-                                <dl>
-                                    <dt>폴바셋</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://dimg.donga.com/wps/NEWS/IMAGE/2025/01/02/130774913.1.jpg"
+                                    data-pswp-width="1200"
+                                    data-pswp-height="828"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://dimg.donga.com/wps/NEWS/IMAGE/2025/01/02/130774913.1.jpg"
+                                            alt="폴바셋 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>폴바셋</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                             <li>
-                                <dl>
-                                    <dt>지옥2</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://i.pinimg.com/736x/c2/67/2b/c2672bef9c09d02dfd9544479fa2cb06.jpg"
+                                    data-pswp-width="736"
+                                    data-pswp-height="1104"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://i.pinimg.com/736x/c2/67/2b/c2672bef9c09d02dfd9544479fa2cb06.jpg"
+                                            alt="지옥2 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>지옥2</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                             <li>
-                                <dl>
-                                    <dt>하네트</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://www.meconomynews.com/news/photo/202404/91651_111326_523.jpg"
+                                    data-pswp-width="1280"
+                                    data-pswp-height="1496"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://www.meconomynews.com/news/photo/202404/91651_111326_523.jpg"
+                                            alt="하네트 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>하네트</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                             <li>
-                                <dl>
-                                    <dt>토독</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://www.harpersbazaar.co.kr/resources/online/online_image/2025/03/31/d588ff1f-5e55-4507-8677-04cba562f087.png"
+                                    data-pswp-width="1174"
+                                    data-pswp-height="1455"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://www.harpersbazaar.co.kr/resources/online/online_image/2025/03/31/d588ff1f-5e55-4507-8677-04cba562f087.png"
+                                            alt="토독 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>토독</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                             <li>
-                                <dl>
-                                    <dt>포트폴리오 사이트</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://blogger.googleusercontent.com/img/a/AVvXsEjS8NwPzfFWPOveuyAMDtraR-TMaw7vCUdC0dOIvO5yID6EM3IBocWgnl7gNbFwuDtE9nFH9AQNuNqtPgcdkkKhAym44du8rMmPZTqeHoM-VF4kxJGbU0wbR1ueqw9VWW6s59kTz44M5ibqCTm0hd6yuFVLX7uNFJtsDK-2s5wRnWk8CCB7eEef3wYH"
+                                    data-pswp-width="1012"
+                                    data-pswp-height="654"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://blogger.googleusercontent.com/img/a/AVvXsEjS8NwPzfFWPOveuyAMDtraR-TMaw7vCUdC0dOIvO5yID6EM3IBocWgnl7gNbFwuDtE9nFH9AQNuNqtPgcdkkKhAym44du8rMmPZTqeHoM-VF4kxJGbU0wbR1ueqw9VWW6s59kTz44M5ibqCTm0hd6yuFVLX7uNFJtsDK-2s5wRnWk8CCB7eEef3wYH"
+                                            alt="포트폴리오 사이트 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>포트폴리오 사이트</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                             <li>
-                                <dl>
-                                    <dt>일동제약</dt>
-                                    <dd>
-                                        기획 / 디자인<br />
-                                        2024.12.20 - 2025.1.20
-                                    </dd>
-                                </dl>
+                                <a
+                                    href="https://newsimg-hams.hankookilbo.com/2022/09/26/e30ec025-2ed7-4d19-ad69-6a5d34567cb8.jpg"
+                                    data-pswp-width="640"
+                                    data-pswp-height="653"
+                                    target="_blank"
+                                >
+                                    <figure>
+                                        <img
+                                            src="https://newsimg-hams.hankookilbo.com/2022/09/26/e30ec025-2ed7-4d19-ad69-6a5d34567cb8.jpg"
+                                            alt="일동제약 이미지"
+                                        />
+                                    </figure>
+                                    <dl>
+                                        <dt>일동제약</dt>
+                                        <dd>
+                                            기획 / 디자인<br />
+                                            2024.12.20 - 2025.1.20
+                                        </dd>
+                                    </dl>
+                                </a>
                             </li>
                         </ol>
                     </div>
-                    <div class="project-con-item">
-                        <ol class="project-list graphicdesign">
-                            <li>
+                    <div class="project-con-item graphicdesign">
+                        <ol class="project-list">
+                            <li class="active">
                                 <dl>
                                     <dt>카페 웜브라운</dt>
                                     <dd>포스터</dd>
@@ -244,8 +325,10 @@
                                 </dl>
                             </li>
                         </ol>
-                        <div class="graphicdesign-content">
-                            <figure><img src="" alt="그래픽디자인 이미지" /></figure>
+                        <div class="graphicdesign-content" id="graphicdesign">
+                            <a href="#" target="_blank">
+                                <figure><img src="./img/graphicdesign1.jpg" alt="그래픽디자인 이미지" /></figure>
+                            </a>
                         </div>
                     </div>
                 </div>
