@@ -404,3 +404,52 @@ section {
     width: 100%;
     height: 80vh;
 }
+
+.contact h3 {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-weight: 300;
+    font-size: 21vw;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1;
+    white-space: nowrap;
+
+    letter-spacing: -0.06em;
+    pointer-events: none;
+    user-select: none;
+}
+
+.contact-list li dl {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-weight: 400;
+}
+
+.contact-list li dl dt {
+    /* border: 1px solid #000; */
+    min-width: 170px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.contact-list li dl dd {
+    font-size: 40px;
+
+    text-transform: lowercase;
+    text-decoration: underline;
+}
+
+.balls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 410px;
+    /* border: 1px solid #000; */
+    z-index: -1;
+}

@@ -127,9 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // ease: 'power2.inOut',
         scrollTrigger: {
             trigger: '.project',
-            start: 'bottom 50%',
+            start: 'bottom 90%',
             toggleActions: 'play reset play reset',
             // markers: true,
+
+            onEnter: () => {
+                const containerWidth = window.innerWidth * 0.5;
+                addBalls(containerWidth, engine);
+            },
         },
     });
 
@@ -183,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // webdesign project-list
-    const webProjects = gsap.utils.toArray('.project-list.webdesign li');
+    const webProjects = gsap.utils.toArray('.webdesign .project-list li');
 
     webProjects.forEach((project, index) => {
         gsap.from(project, {
