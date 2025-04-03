@@ -104,14 +104,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const $projectMenu = $('.project-menu li');
     const $projectconItem = $('.project-con-item');
     $projectMenu.eq(0).addClass('active');
-    $projectconItem.eq(0).hide();
+    $projectconItem.eq(1).hide();
+
+    // contact ScrollTrigger 생성 시 변수에 저장
+    // const contactTrigger = ScrollTrigger.create({
+    //     trigger: '.project',
+    //     start: 'bottom 50%',
+    //     toggleActions: 'play reset play reset',
+    //     // markers: true,
+    //     animation: gsap.from('.contact', {
+    //         autoAlpha: 0,
+    //         y: -100,
+    //         duration: 1,
+    //         ease: 'power2.inOut',
+    //     }),
+    // });
+
+    const contactAnim = gsap.from('.contact', {
+        autoAlpha: 0,
+        duration: 0.1,
+        // y: -100,
+        // ease: 'power2.inOut',
+        scrollTrigger: {
+            trigger: '.project',
+            start: 'bottom 50%',
+            toggleActions: 'play reset play reset',
+            // markers: true,
+        },
+    });
+
+    // 탭 클릭 이벤트에서 특정 ScrollTrigger만 갱신
+    // $projectMenu.on('click', function () {
+    //     const index = $(this).index();
+    //     $projectMenu.removeClass('active');
+    //     $(this).addClass('active');
+    //     $projectconItem.hide();
+    //     $projectconItem.eq(index).show();
+
+    //     // contact ScrollTrigger 갱신
+    //     setTimeout(() => {
+    //         // contactTrigger.refresh();
+    //         contactAnim.scrollTrigger.refresh();
+    //     }, 100);
+    // });
 
     $projectMenu.on('click', function () {
         const index = $(this).index();
         $projectMenu.removeClass('active');
         $(this).addClass('active');
         $projectconItem.hide();
-        $projectconItem.eq(index).show();
+
+        // promise() 사용
+        $projectconItem
+            .eq(index)
+            .show()
+            .promise()
+            .done(() => {
+                contactAnim.scrollTrigger.refresh();
+            });
     });
 
     const projectMenus = gsap.utils.toArray('.project-menu li');
@@ -193,18 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $graphicdesignContent.find('figure img').attr('src', graphicdesignImage[index].img);
     }
-
-    // CONTACT
-    gsap.from('.contact', {
-        autoAlpha: 0,
-        y: -100,
-        duration: 1,
-        ease: 'power2.inOut',
-        scrollTrigger: {
-            trigger: '.project',
-            start: 'bottom 50%',
-            toggleActions: 'play reset play reset',
-            // markers: true,
-        },
-    });
 });

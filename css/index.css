@@ -23,7 +23,7 @@ body {
 }
 
 main {
-    padding-bottom: 70vh;
+    padding-bottom: 80vh;
 }
 
 section {
@@ -402,5 +402,5 @@ section {
     left: 0;
     z-index: 1;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
 }
