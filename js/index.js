@@ -76,31 +76,32 @@ document.addEventListener('DOMContentLoaded', () => {
         '-=0.3'
     );
 
-    introTL.from('.marquee-tilted', {
-        top: '10%',
-        left: '-100%',
-        duration: 0.5,
-        ease: 'power2.inOut',
-    });
-
-    // introTL.from('.marquee-horizon', {
-    //     clipPath: 'inset(0 0 0 100%)',
-    // });
+    introTL.from(
+        '.marquee-tilted',
+        {
+            top: '10%',
+            left: '-100%',
+            duration: 0.5,
+            ease: 'power2.inOut',
+        },
+        '<'
+    );
 
     introTL.to({}, { delay: 1 });
 
     // CIRCLES
     const circles = gsap.utils.toArray('.circle-wrap .circle');
     circles.forEach((circle, index) => {
-        gsap.to(circles, {
-            x: (index) => (index % 2 === 0 ? Math.random() * 1000 : Math.random() * -1000),
-            y: (index) => (index % 2 === 0 ? Math.random() * 2000 : Math.random() * 1000),
+        gsap.to(circle, {
+            x: Math.random() * 1000,
+            y: Math.random() * 2000,
+            delay: index * 0.2,
             // duration: 2.5,
             scrollTrigger: {
                 trigger: '.circle-wrap',
-                start: 'bottom 50%',
-                end: 'bottom+=300% 0%',
-                scrub: 0.5,
+                start: 'bottom 0%',
+                end: 'bottom+=500% 0%',
+                scrub: 1,
                 // markers: true,
             },
         });
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger: title,
                 start: 'top 80%',
                 // markers: true,
-                // toggleActions: 'play none reverse none',
+                toggleActions: 'play none reverse none',
             },
         });
     });

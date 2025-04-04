@@ -108,14 +108,15 @@ section {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: rgba(255, 154, 71, 0.5);
-    filter: blur(16px);
+    background: var(--sub-color);
+    opacity: 0.3;
+    filter: blur(4px);
 }
 
 .circle-wrap .circle:nth-child(1) {
-    top: 10%;
-    left: 10%;
-    filter: blur(10px);
+    top: 56%;
+    left: 14%;
+    filter: blur(6px);
 }
 .circle-wrap .circle:nth-child(2) {
     top: 30%;
@@ -128,7 +129,7 @@ section {
     left: 40%;
     width: 300px;
     height: 300px;
-    filter: blur(26px);
+    filter: blur(16px);
 }
 .circle-wrap .circle:nth-child(4) {
     top: 70%;
@@ -147,7 +148,14 @@ section {
     right: 70%;
     width: 350px;
     height: 350px;
-    filter: blur(36px);
+    filter: blur(30px);
+}
+
+.circle-wrap .circle:nth-child(7) {
+    top: 47%;
+    left: 40%;
+    width: 120px;
+    height: 120px;
 }
 
 .visual {
