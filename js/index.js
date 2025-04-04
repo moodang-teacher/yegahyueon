@@ -12,6 +12,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.ticker.lagSmoothing(0);
 
+    // SCROLL DOWN
+    gsap.fromTo('.scroll-down b', { y: -30 }, { y: 30, ease: 'power1.out', repeat: -1, yoyo: true });
+
+    // GNB
+    const $gnb = $('.gnb');
+    gsap.set($gnb, { x: 100 });
+    gsap.to($gnb, {
+        x: 0,
+        duration: 1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+            trigger: '.visual',
+            start: 'bottom+=300% 0%',
+            // endTrigger: '',
+            // markers: true,
+            toggleActions: 'play none reverse none',
+        },
+    });
+
+    const $gnbMenu = $('.gnb .menu');
+    const $gnbList = $('.gnb-list');
+
+    $gnbMenu.on('click', (e) => {
+        e.preventDefault();
+        $gnbList.toggleClass('active');
+    });
+
+    // 스크롤이 active 클래스가 부여됐을 때 스크롤 시 클래스 지움
+    let isScrolling = false;
+    ScrollTrigger.addEventListener('scrollStart', () => {
+        isScrolling = true;
+        if (isScrolling) $gnbList.removeClass('active');
+    });
+
+    ScrollTrigger.addEventListener('scrollEnd', () => {
+        isScrolling = false;
+    });
+
     // VISUAL
     const introTL = gsap.timeline({
         scrollTrigger: {
@@ -38,9 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         '-=0.3'
     );
 
-    introTL.from('.marquee-horizon', {
-        clipPath: 'inset(0 0 0 100%)',
+    introTL.from('.marquee-tilted', {
+        top: '10%',
+        left: '-100%',
+        duration: 0.5,
+        ease: 'power2.inOut',
     });
+
+    // introTL.from('.marquee-horizon', {
+    //     clipPath: 'inset(0 0 0 100%)',
+    // });
 
     introTL.to({}, { delay: 1 });
 
@@ -74,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             scrollTrigger: {
                 trigger: '.about',
-                start: 'top 30%',
+                start: 'top 80%',
                 // markers: true,
             },
         });
@@ -93,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             scrollTrigger: {
                 trigger: title,
-                start: 'top 40%',
+                start: 'top 80%',
                 // markers: true,
                 // toggleActions: 'play none reverse none',
             },

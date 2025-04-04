@@ -20,6 +20,10 @@
     --white80p: rgba(255, 255, 255, 0.8);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 ::selection {
     background: var(--main-color);
     color: #fff;

@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     World.add(engine.world, mouseConstraint);
 
     // 엔진과 렌더러 실행
-    Engine.run(engine);
+    Runner.run(engine);
     Render.run(render);
 });
 

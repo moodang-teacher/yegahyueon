@@ -7,7 +7,7 @@ body {
 .gnb {
     position: fixed;
     top: 50px;
-    right: 50px;
+    right: 40px;
     z-index: 10;
 
     display: flex;
@@ -15,11 +15,51 @@ body {
     gap: 10px;
 }
 
-.gnb a {
+.gnb > a {
     display: block;
     width: 50px;
     height: 50px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white30p);
+
+    background: no-repeat 50% /50%;
+}
+
+.gnb > a.menu {
+    background-image: url(../img/menu-solid.svg);
+}
+.gnb > a.go-top {
+    background-image: url(../img/arrow-up.svg);
+}
+
+.gnb-list {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s;
+    pointer-events: none;
+
+    display: flex;
+    /* width: fit-content; */
+}
+
+.gnb-list.active {
+    right: 70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gnb-list li a {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+.gnb-list li a:hover {
+    color: var(--main-color);
 }
 
 main {
@@ -34,11 +74,23 @@ section {
 }
 
 .intro {
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid #000;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    padding: 4vw;
+}
+
+.scroll-down {
+    font-weight: 400;
+    font-size: 4vw;
+    color: #000;
+}
+
+.scroll-down b {
+    display: inline-block;
 }
 
 .circle-wrap {
@@ -190,6 +242,30 @@ section {
     /* border: 1px solid #f00; */
 }
 
+.about-menu {
+    display: flex;
+    gap: 300px;
+}
+
+.about-menu li:nth-child(2) {
+    margin-top: 100px;
+}
+.about-menu li:nth-child(3) {
+    margin-top: 200px;
+}
+.about-menu li:nth-child(4) {
+    margin-top: 300px;
+}
+
+.about-menu li a {
+    font-size: 30px;
+    color: #fff;
+}
+
+.about-menu li a:hover {
+    color: var(--main-color);
+}
+
 .about-title h2 {
     font-weight: 700;
     font-size: 8vw;
@@ -205,9 +281,17 @@ section {
     font-weight: 400;
 }
 
+.about-title p {
+    font-weight: 400;
+    font-size: 40px;
+    color: #fff;
+}
+
 /* PROJECT */
 .project {
     /* border: 1px solid #0f0; */
+    padding-top: 10vw;
+    padding-bottom: 10vw;
 }
 
 .project-menu li {
