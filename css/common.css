@@ -4,7 +4,8 @@
 
 :root {
     font-size: 100%; /* 16px --> 1rem */
-    --main-color: #f84812;
+    --main-color: #ff3b00;
+    --sub-color: #d3af1c;
     --title-color: #333;
     --text-color: #666;
     --line-color: rgba(0, 0, 0, 0.3);

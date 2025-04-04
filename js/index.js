@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(project, {
             opacity: 0,
             y: 300,
-            duration: 1,
+            duration: 0.7,
             ease: 'power2.inOut',
             scrollTrigger: {
                 trigger: project,
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.from(project.querySelector('figure'), {
             clipPath: 'inset(0 0 0 100%)',
-            duration: 1,
+            duration: 0.7,
             ease: 'power2.inOut',
             scrollTrigger: {
                 trigger: project,
@@ -293,4 +293,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $graphicdesignContent.find('figure img').attr('src', graphicdesignImage[index].img);
     }
+
+    // CURSOR
+
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            // duration: 1,
+            ease: 'none',
+        });
+    });
+
+    gsap.set(cursor, { autoAlpha: 0, scale: 0.3 });
+
+    const targetItems = document.querySelectorAll('.target-item');
+    targetItems.forEach((item) => {
+        item.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { autoAlpha: 1, scale: 1 });
+        });
+        item.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { autoAlpha: 0, scale: 0.3 });
+        });
+    });
 });
