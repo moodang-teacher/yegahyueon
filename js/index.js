@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lenis.raf(time * 1000);
     });
 
-    gsap.ticker.lagSmoothing(0);
+    // gsap.ticker.lagSmoothing(0);
 
     // SCROLL DOWN
     gsap.fromTo('.scroll-down b', { y: -30 }, { y: 30, ease: 'power1.out', repeat: -1, yoyo: true });
@@ -91,12 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // CIRCLES
     const circles = gsap.utils.toArray('.circle-wrap .circle');
+
     circles.forEach((circle, index) => {
         gsap.to(circle, {
-            x: Math.random() * 1000,
-            y: Math.random() * 2000,
+            // x: Math.random() * 1000,
+            // y: Math.random() * 2000,
+
+            x: gsap.utils.random(0, 1000, true),
+            y: gsap.utils.random(0, 2000, true),
+
             delay: index * 0.2,
-            // duration: 2.5,
             scrollTrigger: {
                 trigger: '.circle-wrap',
                 start: 'bottom 0%',
@@ -298,17 +302,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // CURSOR
 
     const cursor = document.querySelector('.cursor');
+    gsap.set(cursor, { autoAlpha: 0, scale: 0.3 });
 
-    document.addEventListener('mousemove', (e) => {
+    // document.addEventListener('mousemove', (e) => {
+    //     gsap.to(cursor, {
+    //         x: e.clientX,
+    //         y: e.clientY,
+    //         // duration: 1,
+    //         ease: 'none',
+    //     });
+    // });
+
+    const handleMouseMove = (e) => {
         gsap.to(cursor, {
             x: e.clientX,
             y: e.clientY,
             // duration: 1,
             ease: 'none',
         });
-    });
+    };
 
-    gsap.set(cursor, { autoAlpha: 0, scale: 0.3 });
+    document.addEventListener('mousemove', handleMouseMove);
+
+    window.addEventListener('unload', () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+    });
 
     const targetItems = document.querySelectorAll('.target-item');
     targetItems.forEach((item) => {
