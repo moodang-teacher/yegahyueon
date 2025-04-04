@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Lenis.js
-    const lenis = new Lenis();
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
+    // Lenis.js 초기화
+    const lenis = new Lenis({
+        lerp: 0.1, // 스크롤 감속 비율 (0 ~ 1)
+        smooth: true, // 부드러운 스크롤 활성화
     });
 
-    // gsap.ticker.lagSmoothing(0);
+    // Lenis 스크롤 이벤트가 발생할 때마다 ScrollTrigger 업데이트
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // GSAP의 ticker를 사용하여 Lenis 렌더링
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); // Lenis의 raf 메서드에 시간 전달
+    });
 
     // SCROLL DOWN
     gsap.fromTo('.scroll-down b', { y: -30 }, { y: 30, ease: 'power1.out', repeat: -1, yoyo: true });
